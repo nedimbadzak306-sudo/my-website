@@ -1,44 +1,443 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-    }
-    .container {
-      padding: 80px 20px;
-    }
-    h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 18px;
-      opacity: 0.7;
-    }
-    .btn {
-      margin-top: 30px;
-      display: inline-block;
-      padding: 12px 24px;
-      background: #6366f1;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-  </style>
+  <title>Transfer Zona - Fudbalski Transferi, Glasine i Vijesti</title>
+  <meta name="description" content="Najnovije vijesti o fudbalskim transferima, glasine, AI procjene vjerovatnoće transfera i trending igrači.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🚀 My Website is Live</h1>
-    <p>Prvi deploy preko Vercela</p>
-    <a href="#" class="btn">Get Started</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">TZ</div>
+        <span>TRANSFER</span> <span style="color:#fff">ZONA</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Početna</a>
+        <a href="#">Transferi</a>
+        <a href="#">Glasine</a>
+        <a href="#">Igrači</a>
+        <a href="#">Klubovi</a>
+        <a href="#">Lige</a>
+      </nav>
+      <div class="nav-actions">
+        <button title="Pretraga">&#128269;</button>
+        <button title="Obavještenja">&#128276;</button>
+        <div class="nav-avatar">&#9787;</div>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- ===== BREAKING NEWS ===== -->
+  <div class="breaking-bar">
+    <div class="breaking-inner">
+      <span class="breaking-badge">Breaking</span>
+      <div class="breaking-text" id="breakingText">
+        <a href="article.html">Fabrizio Romano: Kylian Mbappé sve bliže potpisu za Real Madrid!</a>
+      </div>
+      <span class="breaking-time">prije 5 min</span>
+      <div class="breaking-nav">
+        <button onclick="prevBreaking()">&lsaquo;</button>
+        <button onclick="nextBreaking()">&rsaquo;</button>
+      </div>
+    </div>
   </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <a href="article.html" class="hero-card">
+          <div class="hero-card-bg" style="background-image: url('https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=900&q=80')"></div>
+          <div class="hero-card-content">
+            <span class="breaking-badge">Breaking</span>
+            <h1>Mbappé sve bliže<br>Real Madridu!</h1>
+            <p>Francuski napadač je dao zeleno svjetlo za transfer. Real Madrid i PSG finaliziraju detalje ugovora.</p>
+            <div class="hero-cta">Pročitaj više &rarr;</div>
+            <div class="hero-meta">
+              <span>prije 5 min</span>
+              <span>&bull;</span>
+              <span>Fabrizio Romano</span>
+            </div>
+          </div>
+        </a>
+        <div class="sidebar-box">
+          <div class="sidebar-title">Najčitanije</div>
+          <div class="most-read-item" onclick="location.href='article.html'">
+            <div class="most-read-num">1</div>
+            <div class="most-read-thumb">
+              <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=100&q=60" alt="">
+            </div>
+            <div class="most-read-info">
+              <div class="most-read-title">Kane bi mogao napustiti Bayern već ovog ljeta</div>
+              <div class="most-read-time">prije 2 sata</div>
+            </div>
+          </div>
+          <div class="most-read-item">
+            <div class="most-read-num">2</div>
+            <div class="most-read-thumb">
+              <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=100&q=60" alt="">
+            </div>
+            <div class="most-read-info">
+              <div class="most-read-title">Arsenal se uključuje u trku za Victora Osimhena</div>
+              <div class="most-read-time">prije 3 sata</div>
+            </div>
+          </div>
+          <div class="most-read-item">
+            <div class="most-read-num">3</div>
+            <div class="most-read-thumb">
+              <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=100&q=60" alt="">
+            </div>
+            <div class="most-read-info">
+              <div class="most-read-title">Liverpool sprema ponudu za João Nevesa</div>
+              <div class="most-read-time">prije 5 sati</div>
+            </div>
+          </div>
+          <div class="most-read-item">
+            <div class="most-read-num">4</div>
+            <div class="most-read-thumb">
+              <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=100&q=60" alt="">
+            </div>
+            <div class="most-read-info">
+              <div class="most-read-title">Barcelona želi produžiti ugovor sa Pedrijem</div>
+              <div class="most-read-time">prije 6 sati</div>
+            </div>
+          </div>
+          <div class="most-read-item">
+            <div class="most-read-num">5</div>
+            <div class="most-read-thumb">
+              <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100&q=60" alt="">
+            </div>
+            <div class="most-read-info">
+              <div class="most-read-title">Chelsea dogovorio dolazak Mikea Maignana?</div>
+              <div class="most-read-time">prije 7 sati</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NAJNOVIJE VIJESTI ===== -->
+  <section class="news-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Najnovije vijesti</h2>
+        <a href="#" class="section-link">Sve vijesti &rarr;</a>
+      </div>
+      <div class="news-grid with-sidebar">
+        <div class="news-card" onclick="location.href='article.html'">
+          <div class="news-card-image">
+            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&q=70" alt="">
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-meta">
+              <span class="news-tag">Transferi</span>
+              <span class="news-time">prije 10 min</span>
+            </div>
+            <h3>Osimhen na korak do odlaska iz Napolija</h3>
+            <p class="news-card-excerpt">Nigerijski napadač je blizu dogovora sa novim klubom. Očekuje se da odluka bude donesena uskoro.</p>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-card-image">
+            <img src="https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=400&q=70" alt="">
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-meta">
+              <span class="news-tag">Transferi</span>
+              <span class="news-time">prije 25 min</span>
+            </div>
+            <h3>Bayer odbio prvu ponudu Bayerna za Wirtza</h3>
+            <p class="news-card-excerpt">Ponuda od 90 miliona eura nije bila dovoljna. Bayern traži preko 120 miliona eura za svog mladog veznjaka.</p>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-card-image">
+            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=400&q=70" alt="">
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-meta">
+              <span class="news-tag red">Transferi</span>
+              <span class="news-time">prije 40 min</span>
+            </div>
+            <h3>Chelsea zainteresovan za Roberta De Zerbija</h3>
+            <p class="news-card-excerpt">Plavci traže novog trenera, a De Zerbi je jedan od glavnih kandidata za klupu Stamford Bridgea.</p>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-card-image">
+            <img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=400&q=70" alt="">
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-meta">
+              <span class="news-tag">Transferi</span>
+              <span class="news-time">prije 1 h</span>
+            </div>
+            <h3>Milan želi zadržati Leãa dugoročno</h3>
+            <p class="news-card-excerpt">Uprava Milana spremna je ponuditi krilnom napadaču novi ugovor koji bi spriječio interes drugih klubova.</p>
+          </div>
+        </div>
+        <!-- Trending Players sidebar -->
+        <div class="trending-box">
+          <div class="trending-title">Trending igrači</div>
+          <div class="trending-player">
+            <div class="trending-avatar">
+              <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=80&q=60" alt="">
+            </div>
+            <div class="trending-player-info">
+              <div class="trending-player-name">Kylian Mbappé</div>
+              <div class="trending-player-pos">Napadač</div>
+            </div>
+            <div class="trending-change up">&#9650; 1</div>
+          </div>
+          <div class="trending-player">
+            <div class="trending-avatar">
+              <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=80&q=60" alt="">
+            </div>
+            <div class="trending-player-info">
+              <div class="trending-player-name">Victor Osimhen</div>
+              <div class="trending-player-pos">Napadač</div>
+            </div>
+            <div class="trending-change up">&#9650; 2</div>
+          </div>
+          <div class="trending-player">
+            <div class="trending-avatar">
+              <img src="https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=80&q=60" alt="">
+            </div>
+            <div class="trending-player-info">
+              <div class="trending-player-name">Florian Wirtz</div>
+              <div class="trending-player-pos">Veznjak</div>
+            </div>
+            <div class="trending-change up">&#9650; 3</div>
+          </div>
+          <div class="trending-player">
+            <div class="trending-avatar">
+              <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=80&q=60" alt="">
+            </div>
+            <div class="trending-player-info">
+              <div class="trending-player-name">João Neves</div>
+              <div class="trending-player-pos">Veznjak</div>
+            </div>
+            <div class="trending-change down">&#9660; 1</div>
+          </div>
+          <div class="trending-player">
+            <div class="trending-avatar">
+              <img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=80&q=60" alt="">
+            </div>
+            <div class="trending-player-info">
+              <div class="trending-player-name">Rafael Leão</div>
+              <div class="trending-player-pos">Krilo</div>
+            </div>
+            <div class="trending-change down">&#9660; 4</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GLASINE ===== -->
+  <section class="rumours-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Glasine</h2>
+        <a href="#" class="section-link">Sve glasine &rarr;</a>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 320px; gap: 24px;">
+        <div class="rumours-grid">
+          <div class="rumour-card" onclick="location.href='article.html'">
+            <div class="rumour-clubs">
+              <div class="rumour-club-badge">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=80&q=60" alt="">
+              </div>
+              <span class="rumour-arrow">&#10132;</span>
+              <div class="rumour-club-badge">
+                <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=80&q=60" alt="">
+              </div>
+            </div>
+            <div>
+              <span class="rumour-tag glasine">Glasine</span>
+              <span class="rumour-prob">92%</span>
+            </div>
+            <div class="rumour-prob-bar"><div class="rumour-prob-fill" style="width: 92%"></div></div>
+            <div class="rumour-player">Kylian Mbappé</div>
+            <div class="rumour-route">PSG &rarr; Real Madrid</div>
+          </div>
+          <div class="rumour-card">
+            <div class="rumour-clubs">
+              <div class="rumour-club-badge">
+                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=80&q=60" alt="">
+              </div>
+              <span class="rumour-arrow">&#10132;</span>
+              <div class="rumour-club-badge">
+                <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=80&q=60" alt="">
+              </div>
+            </div>
+            <div>
+              <span class="rumour-tag glasine">Glasine</span>
+              <span class="rumour-prob">75%</span>
+            </div>
+            <div class="rumour-prob-bar"><div class="rumour-prob-fill" style="width: 75%"></div></div>
+            <div class="rumour-player">Victor Osimhen</div>
+            <div class="rumour-route">Napoli &rarr; Chelsea</div>
+          </div>
+          <div class="rumour-card">
+            <div class="rumour-clubs">
+              <div class="rumour-club-badge">
+                <img src="https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=80&q=60" alt="">
+              </div>
+              <span class="rumour-arrow">&#10132;</span>
+              <div class="rumour-club-badge">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=80&q=60" alt="">
+              </div>
+            </div>
+            <div>
+              <span class="rumour-tag glasine">Glasine</span>
+              <span class="rumour-prob">65%</span>
+            </div>
+            <div class="rumour-prob-bar"><div class="rumour-prob-fill" style="width: 65%"></div></div>
+            <div class="rumour-player">Florian Wirtz</div>
+            <div class="rumour-route">Leverkusen &rarr; Bayern</div>
+          </div>
+          <div class="rumour-card">
+            <div class="rumour-clubs">
+              <div class="rumour-club-badge">
+                <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=80&q=60" alt="">
+              </div>
+              <span class="rumour-arrow">&#10132;</span>
+              <div class="rumour-club-badge">
+                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=80&q=60" alt="">
+              </div>
+            </div>
+            <div>
+              <span class="rumour-tag glasine">Glasine</span>
+              <span class="rumour-prob">55%</span>
+            </div>
+            <div class="rumour-prob-bar"><div class="rumour-prob-fill" style="width: 55%"></div></div>
+            <div class="rumour-player">Viktor Gyökeres</div>
+            <div class="rumour-route">Sporting &rarr; Man Utd</div>
+          </div>
+        </div>
+        <!-- AI Box -->
+        <div class="ai-box">
+          <div class="ai-box-title">Transfer Zona AI</div>
+          <div class="ai-box-subtitle">Vjerovatnoća transfera</div>
+          <p>Naš AI algoritam analizira hiljade podataka i daje procjenu vjerovatnoće transfera u realnom vremenu.</p>
+          <a href="#" class="hero-cta">Saznaj više</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOLLOW US ===== -->
+  <section class="social-section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 320px; gap: 24px;">
+        <div>
+          <div class="section-header">
+            <h2 class="section-title">Popularne teme</h2>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <a href="#" class="tag-pill">Premier League</a>
+            <a href="#" class="tag-pill">La Liga</a>
+            <a href="#" class="tag-pill">Serie A</a>
+            <a href="#" class="tag-pill">Bundesliga</a>
+            <a href="#" class="tag-pill">Ligue 1</a>
+            <a href="#" class="tag-pill">Champions League</a>
+            <a href="#" class="tag-pill">Mbappé</a>
+            <a href="#" class="tag-pill">Haaland</a>
+            <a href="#" class="tag-pill">Bellingham</a>
+            <a href="#" class="tag-pill">Vinicius Jr</a>
+            <a href="#" class="tag-pill">Osimhen</a>
+            <a href="#" class="tag-pill">Wirtz</a>
+            <a href="#" class="tag-pill">Real Madrid</a>
+            <a href="#" class="tag-pill">Barcelona</a>
+            <a href="#" class="tag-pill">Man Utd</a>
+            <a href="#" class="tag-pill">Chelsea</a>
+            <a href="#" class="tag-pill">Arsenal</a>
+            <a href="#" class="tag-pill">Liverpool</a>
+          </div>
+        </div>
+        <div class="social-box">
+          <div class="social-title">Pratite nas</div>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <div class="social-icon fb">f</div>
+              <div class="social-info">
+                <div class="social-name">Facebook</div>
+                <div class="social-count">21K pratilaca</div>
+              </div>
+            </a>
+            <a href="#" class="social-link">
+              <div class="social-icon tw">𝕏</div>
+              <div class="social-info">
+                <div class="social-name">Twitter</div>
+                <div class="social-count">45K pratilaca</div>
+              </div>
+            </a>
+            <a href="#" class="social-link">
+              <div class="social-icon ig">&#9679;</div>
+              <div class="social-info">
+                <div class="social-name">Instagram</div>
+                <div class="social-count">18K pratilaca</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">TZ</div>
+            <span>TRANSFER</span> <span style="color:#fff">ZONA</span>
+          </a>
+          <p>Vaš izvor za najnovije fudbalske transfere, glasine i AI-powered analize tržišta igrača.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigacija</h4>
+          <a href="index.html">Početna</a>
+          <a href="#">Transferi</a>
+          <a href="#">Glasine</a>
+          <a href="#">Igrači</a>
+          <a href="#">Klubovi</a>
+        </div>
+        <div class="footer-col">
+          <h4>Lige</h4>
+          <a href="#">Premier League</a>
+          <a href="#">La Liga</a>
+          <a href="#">Serie A</a>
+          <a href="#">Bundesliga</a>
+          <a href="#">Ligue 1</a>
+        </div>
+        <div class="footer-col">
+          <h4>Pravno</h4>
+          <a href="#">Uslovi korištenja</a>
+          <a href="#">Privatnost</a>
+          <a href="#">Kolačići</a>
+          <a href="#">Kontakt</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Transfer Zona. Sva prava zadržana.</span>
+        <span>Powered by Transfer Zona AI</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
